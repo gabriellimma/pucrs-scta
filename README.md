@@ -2,7 +2,7 @@
 Sistema de Controle de Tráfego Aéreo desenvolvido como projeto final de programação orientada a objetos
 
 
-## Como usar e testar esse projeto
+## Como baixar e instalar o projeto
 
 Após fazer o download do projeto, será necessário instalar as dependências do mesmo:
 
@@ -11,6 +11,12 @@ npm install
 ```
 
 as depêndencias usadas foram `bycontract` para validação de tipos e `eslint` para validação de padrões de escrita e análise estática de código.
+
+## Arquitetura do projeto
+
+Dentro da pasta `src` você terá acesso as pastas relacionadas com cada contexto, uma pasta para as classes, chamada `classes`, uma pasta para as services, chamada `servico` e uma pasta de testes chamada `tests`
+
+## Como testar a lógico do projeto
 
 Tomei a liberdade de implementar os exemplos de uso das classes de serviço com `testes unitários`, para executar os exemplos de uso execute: 
 
