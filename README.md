@@ -16,6 +16,7 @@ as depêndencias usadas foram `bycontract` para validação de tipos e `eslint` 
 
 Dentro da pasta `src` você terá acesso as pastas relacionadas com cada contexto, uma pasta para as classes, chamada `classes`, uma pasta para as services, chamada `servico` e uma pasta de testes chamada `tests`.
 
+```
 src/
 ├── classes/
 │   ├── Aeronave.js
@@ -26,6 +27,7 @@ src/
 │   └── ServicoPiloto.js
 └── tests/
     └── ServicoPiloto.test.js
+```
 
 ## Como testar a lógico do projeto
 
