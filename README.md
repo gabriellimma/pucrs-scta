@@ -45,7 +45,4 @@ você deverá ver algo do tipo no seu terminal:
 
 ```
 
-
-<small>
-lembrando que esse projeto foi criado e compilado com node v20.16.0 (LTS), e pode ser necessário a atualização para o node 20 para usar o `node test runner` nativo da ferramenta.
-</small>
+> lembrando que esse projeto foi criado e compilado com node v20.16.0 (LTS), e pode ser necessário a atualização para o node 20 para usar o `node test runner` nativo da ferramenta.
