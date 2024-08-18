@@ -29,7 +29,7 @@ src/
     └── ServicoPiloto.test.js
 ```
 
-## Como testar a lógico do projeto
+## Como testar a lógica do projeto
 
 Tomei a liberdade de implementar os exemplos de uso das classes de serviço com `testes unitários`, para executar os exemplos de uso execute: 
 
