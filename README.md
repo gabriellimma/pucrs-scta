@@ -66,7 +66,7 @@ Tomei a liberdade de implementar os exemplos de uso das classes de serviço com 
 npm test
 ```
 
-que por sua vez executará o `node test runner` que está nativamente presente desde a versão 20.
+que por sua vez executará o `node test runner` que está nativamente presente desde a versão 20+.
 
 você deverá ver algo do tipo no seu terminal:
 
