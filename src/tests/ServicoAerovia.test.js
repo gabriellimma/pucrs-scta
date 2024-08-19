@@ -5,7 +5,7 @@ import { recupera } from '../servico/ServicoAerovia.js'
 
 describe('Suite de testes ServicoAerovia', () => {
 
-  it("deve um array vazio quando nenhuma aerovia estiver cadastrada", () => {
+  it("deve retornar um array vazio quando nenhuma aerovia estiver cadastrada", () => {
     assert.deepEqual(Aerovia.todas(), [], "Não retornou as aerovias corretas.");
   });
 
