@@ -20,12 +20,16 @@ Dentro da pasta `src` você terá acesso as pastas relacionadas com cada context
 src/
 ├── classes/
 │   ├── Aeronave.js
+│   ├── AeronaveCarga.js
 │   ├── AeronaveComercial.js
 │   ├── AeronaveParticular.js
+│   ├── AeronavePassageiros.js
 │   └── Piloto.js
 ├── servico/
+│   ├── ServicoAeronaves.js
 │   └── ServicoPiloto.js
 └── tests/
+    ├── ServicoAeronaves.test.js
     └── ServicoPiloto.test.js
 ```
 

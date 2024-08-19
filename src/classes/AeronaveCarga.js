@@ -1,20 +1,20 @@
-import { Aeronave } from "./Aeronave.js";
 import { validate } from "bycontract";
+import { Aeronave } from "./Aeronave.js";
 
-// Classe AeronaveComercial
-class AeronaveComercial extends Aeronave {
+// Classe AeronaveCarga
+class AeronaveCarga extends Aeronave {
 
   // Propriedades
-  nomeCIA
+  pesoMax
 
   // Método construtor
-  constructor(prefixo, velocidadeCruzeiro, autonomia, nomeCIA) {
+  constructor(prefixo, velocidadeCruzeiro, autonomia, pesoMax) {
     // Valida os argumentos de entrada
-    validate(arguments, ["string", "number", "number", "string"]);
+    validate(arguments, ["string", "number", "number", "number"]);
     // Chama o método construtor da superclasse passando os argumentos
     super(prefixo, velocidadeCruzeiro, autonomia);
-    // Inicializa a propriedade nomeCIA
-    this.nomeCIA = nomeCIA;
+    // Inicializa a propriedade pesoMax
+    this.pesoMax = pesoMax;
   }
 
   // Sobrescreve o método toString da superclasse
@@ -23,10 +23,10 @@ class AeronaveComercial extends Aeronave {
       // Chama o método toString da superclasse
       ...super.toString(),
       // Adiciona os dados da subclasse
-      nomeCIA: this.nomeCIA
+      pesoMax: this.pesoMax
     };
   }
 }
 
-// Exporta a classe AeronaveComercial para ser usada em outras classes
-export { AeronaveComercial };
+// Exporta a classe AeronaveCarga para ser usada em outras classes
+export { AeronaveCarga };
