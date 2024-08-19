@@ -8,7 +8,7 @@ import { AeronaveCarga } from "../classes/AeronaveCarga.js";
 
 describe('Suite de testes ServicoAeronaves', () => {
 
-  it("deve um array vazio quando nenhuma nave estiver cadastrada", () => {
+  it("deve retornar um array vazio quando nenhuma nave estiver cadastrada", () => {
     assert.deepEqual(Aeronave.todas(), [], "Não retornou as aeronaves corretas.");
   });
 

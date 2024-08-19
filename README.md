@@ -72,26 +72,26 @@ você deverá ver algo do tipo no seu terminal:
 
 ```
 ▶ Suite de testes ServicoAeronaves
-  ✔ deve um array vazio quando nenhuma nave estiver cadastrada (1.217375ms)
-  ✔ deve retornar todas as aeronaves cadastradas (0.609542ms)
-  ✔ deve retornar todas as informações de uma aeronave particular (0.140375ms)
-  ✔ deve retornar todas as informações de uma aeronave carga (0.118416ms)
-  ✔ deve retornar todas as informações de uma aeronave Passageiros (0.099333ms)
-▶ Suite de testes ServicoAeronaves (3.0325ms)
+  ✔ deve retornar um array vazio quando nenhuma nave estiver cadastrada (1.384917ms)
+  ✔ deve retornar todas as aeronaves cadastradas (0.628042ms)
+  ✔ deve retornar todas as informações de uma aeronave particular (0.13525ms)
+  ✔ deve retornar todas as informações de uma aeronave carga (0.123458ms)
+  ✔ deve retornar todas as informações de uma aeronave Passageiros (0.100208ms)
+▶ Suite de testes ServicoAeronaves (3.223ms)
 ▶ Suite de testes ServicoAerovia
-  ✔ deve retornar um array vazio quando nenhuma aerovia estiver cadastrada (1.369584ms)
-  ✔ deve retornar todas as aerovias cadastradas (0.498292ms)
-  ✔ deve retornar uma aerovia pela sua origem e destino (0.147ms)
-  ✔ deve retornar todas as informações de uma aerovia (0.099ms)
-  ✔ deve lançar um erro ao receber uma origem e destino inexistente (0.27275ms)
-  ✔ deve retornar um objeto contendo os dados da aerovia (0.084625ms)
-▶ Suite de testes ServicoAerovia (3.319625ms)
+  ✔ deve retornar um array vazio quando nenhuma aerovia estiver cadastrada (1.437542ms)
+  ✔ deve retornar todas as aerovias cadastradas (0.517791ms)
+  ✔ deve retornar uma aerovia pela sua origem e destino (0.1475ms)
+  ✔ deve retornar todas as informações de uma aerovia (0.100917ms)
+  ✔ deve lançar um erro ao receber uma origem e destino inexistente (0.269916ms)
+  ✔ deve retornar um objeto contendo os dados da aerovia (0.08825ms)
+▶ Suite de testes ServicoAerovia (3.43675ms)
 ▶ Suite de testes ServicoPilotos
-  ✔ deve retornar um piloto pela matrícula (1.78ms)
-  ✔ deve lançar um erro ao receber uma matrícula inexistente (0.304375ms)
-  ✔ deve retornar todos os pilotos cadastrados (0.241208ms)
-  ✔ deve retornar um objeto contendo os dados do piloto (0.102875ms)
-▶ Suite de testes ServicoPilotos (3.257042ms)
+  ✔ deve retornar um piloto pela matrícula (1.711375ms)
+  ✔ deve lançar um erro ao receber uma matrícula inexistente (0.319208ms)
+  ✔ deve retornar todos os pilotos cadastrados (0.2505ms)
+  ✔ deve retornar um objeto contendo os dados do piloto (0.103125ms)
+▶ Suite de testes ServicoPilotos (3.229667ms)
 ℹ tests 15
 ℹ suites 3
 ℹ pass 15
@@ -99,7 +99,7 @@ você deverá ver algo do tipo no seu terminal:
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 81.373917
+ℹ duration_ms 80.434584
 ℹ start of coverage report
 ℹ -----------------------------------------------------------------------------------
 ℹ file                               | line % | branch % | funcs % | uncovered lines
