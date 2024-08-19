@@ -3,7 +3,7 @@ Sistema de Controle de Tráfego Aéreo desenvolvido como projeto final de progra
 
 ## Como baixar e instalar o projeto
 
-Após fazer o download do projeto, será necessário instalar as dependências do mesmo:
+Após fazer o download do projeto e verificar que você tem uma versão do [node > 20 instalada](https://nodejs.org/en), será necessário instalar as dependências do projeto:
 
 ```
 npm install
