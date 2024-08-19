@@ -2,9 +2,6 @@
 import { validate } from "bycontract";
 import { Piloto } from "../classes/Piloto.js";
 
-// Define a variável global Piloto para usar no validate
-globalThis.Piloto = Piloto;
-
 /**
  * Recupera um piloto pelo seu 
  * número de matrícula.

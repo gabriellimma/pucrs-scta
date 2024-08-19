@@ -1,8 +1,5 @@
 import { Aeronave } from "../classes/Aeronave.js";
 
-// Define a variável global Aeronave para usar no validate
-globalThis.Aeronave = Aeronave;
-
 // função que retorna todas as aeronaves cadastradas
 /**
  * Função que retorna todas as aeronaves cadastradas durante
