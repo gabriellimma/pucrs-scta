@@ -1,5 +1,4 @@
 import { validate } from "bycontract";
-import exp from "constants";
 
 /**
  * Super classe Aerovia que representa uma aerovia.
@@ -52,4 +51,5 @@ class Aerovia {
   }
 }
 
+// Exporta a classe Aerovia para ser usada em outras classes
 export { Aerovia };

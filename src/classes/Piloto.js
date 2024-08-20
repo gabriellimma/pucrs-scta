@@ -6,10 +6,10 @@ class Piloto {
   matricula
   nome
   habilitacaoAtiva = false
+  // Criada uma propriedade estática para armazenar os pilotos cadastrados
   static pilotosCadastrados = []
 
   // Método construtor
-  // Criei uma propriedade estática para armazenar os pilotos cadastrados
   constructor(matricula, nome, habilitacaoAtiva) {
     validate(arguments, ["string", "string", "boolean"]);
     this.matricula = matricula;
@@ -18,7 +18,7 @@ class Piloto {
     Piloto.pilotosCadastrados.push(this);
   }
 
-  // Método toString da classepara retornar os dados do piloto
+  // Método toString da classe para retornar os dados do piloto
   toString() {
     return {
       matricula: this.matricula,
@@ -34,4 +34,5 @@ class Piloto {
 
 }
 
+// Exporta a classe Piloto para ser usada em outras classes
 export { Piloto };

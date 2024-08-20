@@ -24,12 +24,12 @@ class Aeronave {
     this.prefixo = prefixo;
     this.velocidadeCruzeiro = velocidadeCruzeiro;
     this.autonomia = autonomia;
-    // Armazena a qualquer aeronave criada na lista de aeronaves cadastradas 
+    // Armazena todas as aeronaves cadastradas 
     Aeronave.aeronavesCadastradas.push(this);
   }
 
   /**
-   * Método estático da clase Aeronave que retorna
+   * Método estático da classe Aeronave que retorna
    * um array com todas as aeronaves cadastradas.
    * @returns {Array<Aeronave>}
    */

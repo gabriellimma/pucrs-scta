@@ -20,4 +20,5 @@ function recupera(origem, destino) {
   return aerovia;
 }
 
+// Exporta a função recupera para ser usada em outras classes
 export { recupera };

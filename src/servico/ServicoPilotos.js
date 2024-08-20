@@ -30,4 +30,5 @@ function todos() {
   return Piloto.todos();
 }
 
+// Exporta as funções recupera e todos para serem usadas em outras classes
 export { recupera, todos };
