@@ -1,4 +1,3 @@
-
 import { validate } from "bycontract";
 import { Piloto } from "../classes/Piloto.js";
 
