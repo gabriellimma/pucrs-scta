@@ -26,14 +26,14 @@ describe('Suite de testes ServicoAerovia', () => {
   it("deve retornar uma aerovia pela sua origem e destino", () => {
 
     // Criação de aerovias
-    const aerovia1 = new Aerovia("T1", "GRU", "CKS", 1000);
-    const aerovia2 = new Aerovia("T2", "CKS", "FLO", 1000);
-    const aerovia3 = new Aerovia("T3", "CKS", "GRU", 1000);
+    const aerovia1 = new Aerovia("R6", "CWB", "GRU", 300);
+    const aerovia2 = new Aerovia("R7", "GRU", "CWB", 300);
+    const aerovia3 = new Aerovia("R8", "FLO", "POA", 400);
 
     // Verifica se as aerovias foram cadastradas corretamente e são recuperadas pelo método "recupera".
-    assert.deepEqual(recupera("GRU", "CKS"), aerovia1, "Não retornou a aerovia correta.");
-    assert.deepEqual(recupera("CKS", "FLO"), aerovia2, "Não retornou a aerovia correta.");
-    assert.deepEqual(recupera("CKS", "GRU"), aerovia3, "Não retornou a aerovia correta.");
+    assert.deepEqual(recupera("CWB", "GRU"), aerovia1, "Não retornou a aerovia correta.");
+    assert.deepEqual(recupera("GRU", "CWB"), aerovia2, "Não retornou a aerovia correta.");
+    assert.deepEqual(recupera("FLO", "POA"), aerovia3, "Não retornou a aerovia correta.");
   });
 
   // validações do método toString

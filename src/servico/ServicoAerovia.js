@@ -1,5 +1,6 @@
 import { validate } from "bycontract";
 import { Aerovia } from "../classes/Aerovia.js";
+import fs from "fs";
 
 /**
  * Função que recupera uma aerovia a partir de uma origem e destino.
@@ -10,6 +11,13 @@ import { Aerovia } from "../classes/Aerovia.js";
 function recupera(origem, destino) {
   // Valida os argumentos de entrada
   validate(arguments, ["string", "string"]);
+
+  // Se o arquivo de aerovias existir, carrega as aerovias
+  if (fs.existsSync("./src/data/aerovias.json")) {
+    const fileContent = fs.readFileSync("./src/data/aerovias.json", "utf8");
+    Aerovia.aerovias = JSON.parse(fileContent);
+  }
+
   // Procura a aerovia na lista de aerovias
   const aerovia = Aerovia.todas().find(a => a.origem === origem && a.destino === destino);
   // Se não encontrar a aerovia, lança uma exceção
