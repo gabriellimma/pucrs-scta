@@ -1,7 +1,7 @@
 import { describe, it } from 'node:test'
 import assert from 'node:assert'
 import { Aerovia } from "../classes/Aerovia.js";
-import { recupera } from '../servico/ServicoAerovia.js'
+import { recupera, recuperaAeroviaPorID } from '../servico/ServicoAerovia.js'
 
 describe('Suite de testes ServicoAerovia', () => {
 
@@ -43,12 +43,40 @@ describe('Suite de testes ServicoAerovia', () => {
       "Não retornou as informações corretas.");
   })
 
+  // Teste da função recupera através do id da aerovia
+  it('deve retornar um objeto de aerovia através do seu id', () => {
+    assert.deepEqual(recuperaAeroviaPorID('R7'),
+      {
+        "id": "R7",
+        "origem": "GRU",
+        "destino": "CWB",
+        "tamanho": 300
+      },
+      "Não retornou o objeto com os dados da aerovia.");
+  })
+
   // Teste da função recupera com origem e destino inexistente
   it("deve lançar um erro ao receber uma origem e destino inexistente", () => {
 
     // Função wrapper para capturar o erro
     function errorThrowingWrapper() {
       recupera('POA', 'XXX');
+    }
+    // Verifica se o erro foi lançado com a mensagem esperada
+    assert.throws(
+      errorThrowingWrapper,
+      /Error: Aerovia não encontrada./,
+      "Não lançou o erro esperado com a mensagem correta."
+    );
+  });
+
+
+  // Teste da função recupera com origem e destino inexistente pelo ID
+  it("deve lançar um erro ao receber um id de aerovia inexistente", () => {
+
+    // Função wrapper para capturar o erro
+    function errorThrowingWrapper() {
+      recuperaAeroviaPorID('XXX');
     }
     // Verifica se o erro foi lançado com a mensagem esperada
     assert.throws(

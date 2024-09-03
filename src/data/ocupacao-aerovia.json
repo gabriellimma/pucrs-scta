@@ -1,0 +1,57 @@
+[
+  {
+    "idAerovia": "R1",
+    "altitudes": [
+      {
+        "altitude": 25000,
+        "datas": {
+          "01/09/2024": [
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "altitude": 26000,
+        "datas": {}
+      },
+      {
+        "altitude": 27000,
+        "datas": {}
+      },
+      {
+        "altitude": 28000,
+        "datas": {}
+      },
+      {
+        "altitude": 29000,
+        "datas": {}
+      },
+      {
+        "altitude": 30000,
+        "datas": {}
+      },
+      {
+        "altitude": 31000,
+        "datas": {}
+      },
+      {
+        "altitude": 32000,
+        "datas": {}
+      },
+      {
+        "altitude": 33000,
+        "datas": {}
+      },
+      {
+        "altitude": 34000,
+        "datas": {}
+      },
+      {
+        "altitude": 35000,
+        "datas": {}
+      }
+    ]
+  }
+]
