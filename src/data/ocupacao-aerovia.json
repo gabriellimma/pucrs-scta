@@ -7,10 +7,374 @@
         "datas": {
           "01/09/2024": [
             3,
-            4,
-            5
+            9,
+            11,
+            2,
+            7,
+            0
           ]
         }
+      },
+      {
+        "altitude": 26000,
+        "datas": {}
+      },
+      {
+        "altitude": 27000,
+        "datas": {}
+      },
+      {
+        "altitude": 28000,
+        "datas": {}
+      },
+      {
+        "altitude": 29000,
+        "datas": {}
+      },
+      {
+        "altitude": 30000,
+        "datas": {}
+      },
+      {
+        "altitude": 31000,
+        "datas": {}
+      },
+      {
+        "altitude": 32000,
+        "datas": {}
+      },
+      {
+        "altitude": 33000,
+        "datas": {}
+      },
+      {
+        "altitude": 34000,
+        "datas": {}
+      },
+      {
+        "altitude": 35000,
+        "datas": {}
+      }
+    ]
+  },
+  {
+    "idAerovia": "R2",
+    "altitudes": [
+      {
+        "altitude": 25000,
+        "datas": {
+          "01/01/2024": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "01/09/2024": [
+            0,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "altitude": 26000,
+        "datas": {}
+      },
+      {
+        "altitude": 27000,
+        "datas": {}
+      },
+      {
+        "altitude": 28000,
+        "datas": {}
+      },
+      {
+        "altitude": 29000,
+        "datas": {}
+      },
+      {
+        "altitude": 30000,
+        "datas": {}
+      },
+      {
+        "altitude": 31000,
+        "datas": {}
+      },
+      {
+        "altitude": 32000,
+        "datas": {}
+      },
+      {
+        "altitude": 33000,
+        "datas": {}
+      },
+      {
+        "altitude": 34000,
+        "datas": {}
+      },
+      {
+        "altitude": 35000,
+        "datas": {
+          "01/09/2024": [
+            0,
+            1,
+            2
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "idAerovia": "R3",
+    "altitudes": [
+      {
+        "altitude": 25000,
+        "datas": {}
+      },
+      {
+        "altitude": 26000,
+        "datas": {}
+      },
+      {
+        "altitude": 27000,
+        "datas": {}
+      },
+      {
+        "altitude": 28000,
+        "datas": {}
+      },
+      {
+        "altitude": 29000,
+        "datas": {}
+      },
+      {
+        "altitude": 30000,
+        "datas": {}
+      },
+      {
+        "altitude": 31000,
+        "datas": {}
+      },
+      {
+        "altitude": 32000,
+        "datas": {}
+      },
+      {
+        "altitude": 33000,
+        "datas": {}
+      },
+      {
+        "altitude": 34000,
+        "datas": {}
+      },
+      {
+        "altitude": 35000,
+        "datas": {}
+      }
+    ]
+  },
+  {
+    "idAerovia": "R4",
+    "altitudes": [
+      {
+        "altitude": 25000,
+        "datas": {}
+      },
+      {
+        "altitude": 26000,
+        "datas": {}
+      },
+      {
+        "altitude": 27000,
+        "datas": {}
+      },
+      {
+        "altitude": 28000,
+        "datas": {}
+      },
+      {
+        "altitude": 29000,
+        "datas": {}
+      },
+      {
+        "altitude": 30000,
+        "datas": {}
+      },
+      {
+        "altitude": 31000,
+        "datas": {}
+      },
+      {
+        "altitude": 32000,
+        "datas": {}
+      },
+      {
+        "altitude": 33000,
+        "datas": {}
+      },
+      {
+        "altitude": 34000,
+        "datas": {}
+      },
+      {
+        "altitude": 35000,
+        "datas": {}
+      }
+    ]
+  },
+  {
+    "idAerovia": "R5",
+    "altitudes": [
+      {
+        "altitude": 25000,
+        "datas": {}
+      },
+      {
+        "altitude": 26000,
+        "datas": {}
+      },
+      {
+        "altitude": 27000,
+        "datas": {}
+      },
+      {
+        "altitude": 28000,
+        "datas": {}
+      },
+      {
+        "altitude": 29000,
+        "datas": {}
+      },
+      {
+        "altitude": 30000,
+        "datas": {}
+      },
+      {
+        "altitude": 31000,
+        "datas": {}
+      },
+      {
+        "altitude": 32000,
+        "datas": {}
+      },
+      {
+        "altitude": 33000,
+        "datas": {}
+      },
+      {
+        "altitude": 34000,
+        "datas": {}
+      },
+      {
+        "altitude": 35000,
+        "datas": {}
+      }
+    ]
+  },
+  {
+    "idAerovia": "R6",
+    "altitudes": [
+      {
+        "altitude": 25000,
+        "datas": {}
+      },
+      {
+        "altitude": 26000,
+        "datas": {}
+      },
+      {
+        "altitude": 27000,
+        "datas": {}
+      },
+      {
+        "altitude": 28000,
+        "datas": {}
+      },
+      {
+        "altitude": 29000,
+        "datas": {}
+      },
+      {
+        "altitude": 30000,
+        "datas": {}
+      },
+      {
+        "altitude": 31000,
+        "datas": {}
+      },
+      {
+        "altitude": 32000,
+        "datas": {}
+      },
+      {
+        "altitude": 33000,
+        "datas": {}
+      },
+      {
+        "altitude": 34000,
+        "datas": {}
+      },
+      {
+        "altitude": 35000,
+        "datas": {}
+      }
+    ]
+  },
+  {
+    "idAerovia": "R7",
+    "altitudes": [
+      {
+        "altitude": 25000,
+        "datas": {}
+      },
+      {
+        "altitude": 26000,
+        "datas": {}
+      },
+      {
+        "altitude": 27000,
+        "datas": {}
+      },
+      {
+        "altitude": 28000,
+        "datas": {}
+      },
+      {
+        "altitude": 29000,
+        "datas": {}
+      },
+      {
+        "altitude": 30000,
+        "datas": {}
+      },
+      {
+        "altitude": 31000,
+        "datas": {}
+      },
+      {
+        "altitude": 32000,
+        "datas": {}
+      },
+      {
+        "altitude": 33000,
+        "datas": {}
+      },
+      {
+        "altitude": 34000,
+        "datas": {}
+      },
+      {
+        "altitude": 35000,
+        "datas": {}
+      }
+    ]
+  },
+  {
+    "idAerovia": "R8",
+    "altitudes": [
+      {
+        "altitude": 25000,
+        "datas": {}
       },
       {
         "altitude": 26000,

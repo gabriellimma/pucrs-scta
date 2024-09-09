@@ -15,6 +15,7 @@ function recuperaOcupacaoAerovia(idAerovia, data, filePath = "./src/data/ocupaca
 
   // Lista com todos os slots disponíveis
   const slotsDisponiveis = [
+    0,
     1,
     2,
     3,
@@ -37,8 +38,7 @@ function recuperaOcupacaoAerovia(idAerovia, data, filePath = "./src/data/ocupaca
     20,
     21,
     22,
-    23,
-    24
+    23
   ];
 
   // Inicializa a lista de ocupacao-aerovia persistida no arquivo json
@@ -114,18 +114,19 @@ function recuperaOcupacaoAerovia(idAerovia, data, filePath = "./src/data/ocupaca
  * Método que recupera as altitudes livres de uma aerovia em uma determinada data
  * @param {*} idAerovia 
  * @param {*} data 
- * @returns 
+ * @param {string} [filePath="./src/data/ocupacao-aerovia.json"] - Caminho do arquivo de ocupação da aerovia - Default: "./src/data/ocupacao-aerovia.json"
+ * @returns {Array<{altitude: number, data: string, slots_desocupados: number[]}>} - Retorna um array de objetos com as altitudes livres
  */
-function altitudesLivres(idAerovia, data) {
+function altitudesLivres(idAerovia, data, filePath = "./src/data/ocupacao-aerovia.json") {
 
   // Valida os argumentos de entrada
   validate(arguments, ["string", "string"]);
 
   // Recupera a aerovia pelo ID
-  const aerovia = recuperaAeroviaPorID(idAerovia);
+  const aerovia = recuperaAeroviaPorID(idAerovia, filePath);
 
   // Recupera a ocupação da aerovia
-  const ocupacao = recuperaOcupacaoAerovia(aerovia.id, data);
+  const ocupacao = recuperaOcupacaoAerovia(aerovia.idAerovia, data, filePath);
 
   // Retorna as altitudes livres
   return ocupacao.aeroviasLivres;
@@ -135,23 +136,111 @@ function altitudesLivres(idAerovia, data) {
  * Método que retorna as altitudes livres de uma aerovia para uma determinada data e hora
  * @param {string} idAerovia - ID da aerovia
  * @param {string} data - Data no formato DD/MM/AAAA
- * @param {number} hora - Hora do dia no formato 24 horas (1-24)
+ * @param {number} hora - Hora do dia no formato 24 horas (0-23)
  * @returns 
  */
-function altitudesLivresDataHora(idAerovia, data, hora) {
+function altitudesLivresDataHora(idAerovia, data, hora, filePath = "./src/data/ocupacao-aerovia.json") {
 
   // Valida os argumentos de entrada
   validate(arguments, ["string", "string", "number"]);
 
   // Recupera a aerovia pelo ID
-  const aerovia = recuperaAeroviaPorID(idAerovia);
+  const aerovia = recuperaAeroviaPorID(idAerovia, filePath);
 
   // Recupera a ocupação da aerovia
-  const ocupacao = recuperaOcupacaoAerovia(aerovia.id, data);
+  const ocupacao = recuperaOcupacaoAerovia(aerovia.idAerovia, data, filePath);
 
   // retorna as altitudes livres para uma determinada hora
-  return ocupacao.aeroviasLivres.filter(altitude => altitude.slots_desocupados.includes(hora));
+  return ocupacao.aeroviasLivres.find(altitude => altitude.slots_desocupados.includes(hora));
+}
+
+/**
+ * Método que ocupa uma aerovia em uma determinada data, altitude e slots de tempo
+ * @param {string} idAerovia 
+ * @param {string} data - Data no formato DD/MM/AAAA
+ * @param {number} altitude - Altitude em pés 35000
+ * @param {Array<number>} slots - Slots de tempo inteiros (0-23)
+ * @param {string} [filePath="./src/data/ocupacao-aerovia.json"] - Caminho do arquivo de ocupação da aerovia - Default: "./src/data/ocupacao-aerovia.json"  
+ */
+function ocupa(idAerovia, data, altitude, slots, filePath = "./src/data/ocupacao-aerovia.json") {
+  // Valida os argumentos de entrada
+  validate(arguments, ["string", "string", "number", "array"]);
+
+  // Valida se os slots estão no intervalo de 0 a 23
+  for (let slot of slots) {
+    if (slot < 0 || slot > 23) {
+      throw new Error("Slot inválido.");
+    }
+    // Verifica se o slot está ocupado antes de persistir no array
+    if (isOcupado(idAerovia, data, altitude, slot, filePath)) {
+      throw new Error(`Slot ${slot}, da aerovia ${idAerovia} já está ocupado na data ${data} para a altitude ${altitude}`);
+    }
+  }
+
+  // valida se o arquivo ocupacao-aerovia.json existe
+  if (fs.existsSync(filePath)) {
+    // Lê o conteúdo do arquivo de ocupacao-aerovia
+    const fileContent = fs.readFileSync(filePath, "utf8");
+    // Converte o conteúdo do arquivo para um objeto JSON e atribui à lista de ocupacao
+    const ocupacao = JSON.parse(fileContent);
+
+    // Procura a aerovia pelo id informado no arquvo "{filepath}.json"
+    let aeroviaOcupacao = ocupacao.find((a) => a.idAerovia === idAerovia);
+
+    // Se a aerovia foi encontrada ocupa o objeto "datas" com a data e os slots ocupados
+    if (aeroviaOcupacao) {
+      // Procura a altitude pelo id informado no arquvo "{filepath}.json"
+      let altitudeOcupacao = aeroviaOcupacao.altitudes.find((a) => a.altitude === altitude);
+
+      if (altitudeOcupacao) {
+        // Se a data informada possuir slots ocupados
+        if (altitudeOcupacao.datas[data]) {
+          // Adiciona a altitude e a quantidade de slots ocupados na lista de datas ocupadas
+          altitudeOcupacao.datas[data] = altitudeOcupacao.datas[data].concat(slots);
+        } else {
+          altitudeOcupacao.datas[data] = slots;
+        }
+      } else {
+        // Se a altitude não foi encontrada, retorna um erro
+        throw new Error(`Altitude ${altitude} não encontrada na lista de altitudes disponíveis.`);
+      }
+    }
+
+    // Escreve o conteúdo no arquivo de ocupacao-aerovia.json
+    fs.writeFileSync(filePath, JSON.stringify(ocupacao, null, 2));
+    return true;
+  }
+}
+
+/**
+ * Método que verifica se a aerovia está ocupada em uma determinada data, 
+ * altitude e slot de tempo inteiro
+ * @param {string} idAerovia 
+ * @param {string} data - Data no formato DD/MM/AAAA
+ * @param {number} altitude - Altitude em pés 35000
+ * @param {number} slot - Slot de tempo inteiro (0-23)
+ * @param {string} [filePath="./src/data/ocupacao-aerovia.json"] - Caminho do arquivo de ocupação da aerovia - Default: "./src/data/ocupacao-aerovia.json"
+ * @returns 
+ */
+function isOcupado(idAerovia, data, altitude, slot, filePath = "./src/data/ocupacao-aerovia.json") {
+  // Valida os argumentos de entrada
+  validate(arguments, ["string", "string", "number", "number"]);
+
+  // Recupera a aerovia pelo ID
+  const aerovia = recuperaAeroviaPorID(idAerovia, filePath);
+
+  // Recupera a ocupação da aerovia
+  const ocupacao = recuperaOcupacaoAerovia(aerovia.idAerovia, data, filePath);
+
+  // Verifica se a altitude e o slot estão ocupados para a data informada
+  const isDataOcupada = ocupacao.datasOcupadas.some(altitudeOcupada =>
+    altitudeOcupada.altitude === altitude &&
+    altitudeOcupada.data === data &&
+    altitudeOcupada.slots_ocupados.includes(slot)
+  )
+  // Retorna true se a altitude e o slot estiverem ocupados
+  return isDataOcupada
 }
 
 // Exporta a função de recuperação de ocupação de aerovia e altitudes livres
-export { recuperaOcupacaoAerovia, altitudesLivres, altitudesLivresDataHora };
+export { recuperaOcupacaoAerovia, altitudesLivres, altitudesLivresDataHora, ocupa, isOcupado };

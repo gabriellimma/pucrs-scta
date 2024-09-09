@@ -1,5 +1,6 @@
 import { validate } from "bycontract";
 import { Piloto } from "../classes/Piloto.js";
+import fs from "fs";
 
 /**
  * Recupera um piloto pelo seu 
@@ -9,6 +10,12 @@ import { Piloto } from "../classes/Piloto.js";
 function recupera(matricula) {
   // valida a entrada de dados da função
   validate(arguments, ["string"]);
+
+  // se o arquivo  cadastro-pilotos.json existir, carrega os pilotos cadastrados
+  if (fs.existsSync("./src/data/cadastro-pilotos.json")) {
+    const fileContent = fs.readFileSync("./src/data/cadastro-pilotos.json", "utf8");
+    Piloto.pilotosCadastrados = JSON.parse(fileContent);
+  }
 
   // recupera o piloto pelo número de matrícula
   let piloto = Piloto.todos().find(p => p.matricula === matricula);

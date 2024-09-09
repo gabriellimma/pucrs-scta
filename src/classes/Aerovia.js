@@ -6,7 +6,7 @@ import { validate } from "bycontract";
 class Aerovia {
 
   // Propriedades
-  id
+  idAerovia
   origem
   destino
   tamanho
@@ -14,14 +14,14 @@ class Aerovia {
 
   /**
    * Construtor da superclasse Aerovia
-   * @param {string} id 
+   * @param {string} idAerovia 
    * @param {string} origem 
    * @param {string} destino 
    * @param {number} tamanho 
    */
-  constructor(id, origem, destino, tamanho) {
+  constructor(idAerovia, origem, destino, tamanho) {
     validate(arguments, ["string", "string", "string", "number"]);
-    this.id = id;
+    this.idAerovia = idAerovia;
     this.origem = origem;
     this.destino = destino;
     this.tamanho = tamanho;
@@ -43,7 +43,7 @@ class Aerovia {
    */
   toString() {
     return {
-      id: this.id,
+      idAerovia: this.idAerovia,
       origem: this.origem,
       destino: this.destino,
       tamanho: this.tamanho

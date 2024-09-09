@@ -26,8 +26,8 @@ describe('Suite de testes ServicoAerovia', () => {
   it("deve retornar uma aerovia pela sua origem e destino", () => {
 
     // Criação de aerovias
-    const aerovia1 = new Aerovia("R6", "CWB", "GRU", 300);
-    const aerovia2 = new Aerovia("R7", "GRU", "CWB", 300);
+    const aerovia1 = new Aerovia("R6", "CWB", "GRU", 4000);
+    const aerovia2 = new Aerovia("R7", "GRU", "CWB", 7000);
     const aerovia3 = new Aerovia("R8", "FLO", "POA", 400);
 
     // Verifica se as aerovias foram cadastradas corretamente e são recuperadas pelo método "recupera".
@@ -39,7 +39,7 @@ describe('Suite de testes ServicoAerovia', () => {
   // validações do método toString
   it("deve retornar todas as informações de uma aerovia", () => {
     assert.deepEqual(new Aerovia("A-1", "São Paulo", "Rio de Janeiro", 100),
-      { id: 'A-1', origem: 'São Paulo', destino: 'Rio de Janeiro', tamanho: 100 },
+      { idAerovia: 'A-1', origem: 'São Paulo', destino: 'Rio de Janeiro', tamanho: 100 },
       "Não retornou as informações corretas.");
   })
 
@@ -47,10 +47,10 @@ describe('Suite de testes ServicoAerovia', () => {
   it('deve retornar um objeto de aerovia através do seu id', () => {
     assert.deepEqual(recuperaAeroviaPorID('R7'),
       {
-        "id": "R7",
+        "idAerovia": "R7",
         "origem": "GRU",
         "destino": "CWB",
-        "tamanho": 300
+        "tamanho": 7000
       },
       "Não retornou o objeto com os dados da aerovia.");
   })
@@ -74,14 +74,20 @@ describe('Suite de testes ServicoAerovia', () => {
   // Teste da função recupera com origem e destino inexistente pelo ID
   it("deve lançar um erro ao receber um id de aerovia inexistente", () => {
 
+    const idAerovia = 'XXX';
+    // cria uma mensagem de erro esperada
+    const errorMessage = `Aerovia ID:${idAerovia} não encontrada na lista de aerovias disponíveis.`;
+    // cria uma expressão regular para validar a mensagem de erro
+    const errMessageRegex = new RegExp(errorMessage);
+
     // Função wrapper para capturar o erro
     function errorThrowingWrapper() {
-      recuperaAeroviaPorID('XXX');
+      recuperaAeroviaPorID(idAerovia);
     }
     // Verifica se o erro foi lançado com a mensagem esperada
     assert.throws(
       errorThrowingWrapper,
-      /Error: Aerovia não encontrada./,
+      errMessageRegex,
       "Não lançou o erro esperado com a mensagem correta."
     );
   });
@@ -89,7 +95,9 @@ describe('Suite de testes ServicoAerovia', () => {
   // Teste do método toString da classe Aerovia
   it('deve retornar um objeto contendo os dados da aerovia', () => {
     assert.deepEqual(new Aerovia("A-2", "São Paulo", "Rio de Janeiro", 100).toString(),
-      { id: 'A-2', origem: 'São Paulo', destino: 'Rio de Janeiro', tamanho: 100 },
+      { idAerovia: 'A-2', origem: 'São Paulo', destino: 'Rio de Janeiro', tamanho: 100 },
       "Não retornou o objeto com os dados da aerovia.");
   })
+
+
 })

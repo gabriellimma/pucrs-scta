@@ -6,14 +6,13 @@ import { recupera, todos } from '../servico/ServicoPilotos.js'
 describe('Suite de testes ServicoPilotos', () => {
 
   // Criação de pilotos
-  const piloto1 = new Piloto("PP-1234", "João", true);
-  const piloto2 = new Piloto("PP-5678", "Maria", true);
-  const piloto3 = new Piloto("PP-9012", "José", false);
-  const piloto4 = new Piloto("PP-3456", "Ana", true);
+  const piloto1 = new Piloto("123", "Piloto 1", true);
+  const piloto2 = new Piloto("456", "Piloto 2", true);
+  const piloto3 = new Piloto("789", "Piloto 3", false);
 
   // 1. Teste da função recupera
   it('deve retornar um piloto pela matrícula', () => {
-    assert.deepEqual(recupera("PP-9012"), piloto3, "Não retornou o piloto correto.");
+    assert.deepEqual(recupera("789"), piloto3, "Não retornou o piloto correto.");
   })
 
   // Teste da função recupera com matrícula inexistente
@@ -33,7 +32,7 @@ describe('Suite de testes ServicoPilotos', () => {
 
   // 2. Teste da função todos
   it('deve retornar todos os pilotos cadastrados', () => {
-    assert.deepEqual(todos(), [piloto1, piloto2, piloto3, piloto4], "Não retornou os pilotos corretos.");
+    assert.deepEqual(todos(), [piloto1, piloto2, piloto3], "Não retornou os pilotos corretos.");
   })
 
   // Teste de métodos da classe Piloto

@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "id": 1,
+    "matriculaPiloto": "456",
+    "idAerovia": "R2",
+    "data": "01/09/2024",
+    "horario": "18:00",
+    "altitude": 35000,
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "cancelado": false
+  }
+]

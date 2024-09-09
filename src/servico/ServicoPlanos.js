@@ -14,7 +14,7 @@ globalThis.PlanoDeVoo = PlanoDeVoo;
 function consiste(planoDeVoo, nomeArquivo = "planos_de_voo.json", diretorio = "./src/data") {
   // valida os argumentos
   validate(arguments, ["PlanoDeVoo"]);
-  
+
   // define o diretório e normaliza o caminho do arquivo de planos de voo
   const dir = path.resolve(diretorio);
   const filePath = path.join(dir, nomeArquivo);
@@ -37,13 +37,13 @@ function consiste(planoDeVoo, nomeArquivo = "planos_de_voo.json", diretorio = ".
   }
 
   // se houver planos de voo cadastrados
- if(existingContent.length > 0) {
-  // adiciona o id ao plano de voo de acordo com o último id cadastrado no arquivo
-    planoDeVoo.id = existingContent[existingContent.length -1].id + 1;
- } else {
-  // se não houver planos de voo cadastrados, o id do plano de voo é 1
+  if (existingContent.length > 0) {
+    // adiciona o id ao plano de voo de acordo com o último id cadastrado no arquivo
+    planoDeVoo.id = existingContent[existingContent.length - 1].id + 1;
+  } else {
+    // se não houver planos de voo cadastrados, o id do plano de voo é 1
     planoDeVoo.id = 1;
- }
+  }
 
   // adiciona o plano de voo ao conteúdo existente
   existingContent.push(planoDeVoo);
@@ -67,7 +67,7 @@ function recupera(id, nomeArquivo = "planos_de_voo.json", diretorio = "./src/dat
   const listaPlanos = JSON.parse(fs.readFileSync(path.resolve(`${diretorio}${nomeArquivo}`), "utf-8"));
 
   // recupera o plano de voo pelo id
-  const plano = listaPlanos.find(p => p.id === id);
+  const plano = listaPlanos.find(p => p.id == id);
   // se não encontrar o plano de voo, lança uma exceção
   if (!plano) {
     throw new Error("Plano de voo não encontrado.");

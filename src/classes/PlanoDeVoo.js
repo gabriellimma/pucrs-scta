@@ -12,7 +12,6 @@ class PlanoDeVoo {
   matriculaPiloto
   idAerovia
   data
-  hora
   horario
   altitude
   slots
@@ -29,13 +28,12 @@ class PlanoDeVoo {
    * @param {Array<Number>} slots 
    * @param {Boolean} cancelado 
    */
-  constructor(matriculaPiloto, idAerovia, data, hora, horario, altitude, slots, cancelado) {
+  constructor(matriculaPiloto, idAerovia, data, horario, altitude, slots, cancelado) {
     validate(arguments,
-      ["String", "String", "String", "String", "String", "Number", "Array.<Number>", "Boolean"])
+      ["String", "String", "String", "String", "Number", "Array.<Number>", "Boolean"])
     this.matriculaPiloto = matriculaPiloto
     this.idAerovia = idAerovia
     this.data = data
-    this.hora = hora
     this.horario = horario
     this.altitude = altitude
     this.slots = slots
@@ -53,7 +51,6 @@ class PlanoDeVoo {
       matriculaPiloto: this.matriculaPiloto,
       idAerovia: this.idAerovia,
       data: this.data,
-      hora: this.hora,
       horario: this.horario,
       altitude: this.altitude,
       slots: this.slots,

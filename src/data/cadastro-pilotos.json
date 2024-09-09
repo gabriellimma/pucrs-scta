@@ -1,0 +1,17 @@
+[
+  {
+    "matricula": "123",
+    "nome": "Piloto 1",
+    "habilitacaoAtiva": true
+  },
+  {
+    "matricula": "456",
+    "nome": "Piloto 2",
+    "habilitacaoAtiva": true
+  },
+  {
+    "matricula": "789",
+    "nome": "Piloto 3",
+    "habilitacaoAtiva": false
+  }
+]
